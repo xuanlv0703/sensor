@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>Controller Sensor</title>
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <script type="text/javascript" src="lib/jquery-2.2.0.min.js"></script>
+    <style type="text/css">
+    a {
+        color: #000;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Centered Tabs -->
+        <ul class="nav nav-tabs nav-justified">
+            <li class="menuitem active"><a href="index.html">Home</a></li>
+            <li class="menuitem"><a href="view-value.html">View Value</a></li>
+            <li class="menuitem"><a href="chart.html">Charts</a></li>
+            <li class="menuitem"><a href="overview.html">Overview</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1 class="text-center">Sensor controller</h1>
+        <div class="optionFilter">
+            <div class="form-group col-md-3 nopadding-left">
+                <label for="sel1">User</label>
+                <select class="form-control" id="filterUser">
+                    <option>All</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="sel1">Group</label>
+                <select class="form-control" id="filterGroup">
+                    <option>All</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="sel1">Tenant</label>
+                <select class="form-control" id="filterTenant">
+                    <option>All</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <!-- <a href="view-value.html">View Value</a> -->
+            </div>
+        </div>
+        <div id="errInfo"></div>
+        <div class="table">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>MAC Address</th>
+                        <th>User</th>
+                        <th>Group</th>
+                        <th>Tenant</th>
+                        <th>isActive</th>
+                    </tr>
+                </thead>
+                <tbody id="tb-content">
+                </tbody>
+            </table>
+        </div>
+        <!-- popUpmodal-->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Push message to Queues</h4>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>sudo init 0</li>
+                            <li>sudo init 6</li>
+                            <li>sudo power off</li>
+                        </ul>
+                        <p>Please type your message</p>
+                        <textarea id="commandLine" class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="postMessage" type="button" class="btn btn-default" data-dismiss="modal">Send</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--EndpopUpmodal -->
+    </div>
+    <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/script.js"></script>
+</body>
+<script type="text/javascript">
+$(".menuitem").click(function function_name(argument) {
+    // console.log(this);
+    // console.log($(this).hasClass("active"));
+    // $(this).removeClass("active");
+    // console.log(this);
+    // alert($(this).parent().hasClass("active"));
+    if ($(this).hasClass("active")) {
+        // $(this).removeClass("active");
+        // alert($(this).hasClass("active"));
+    } else {
+        $(this).addClass("active");
+    }
+})
+</script>
+
+</html>
