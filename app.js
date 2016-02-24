@@ -1,19 +1,9 @@
 var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var mysql = require('mysql');
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
-
-
 
 var app = express();
 
 //  OpenShift sample Node application
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 3002;
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 // error handling
