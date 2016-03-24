@@ -1,4 +1,4 @@
-var socket = io('http://localhost:3000'); var num = 1;
+var socket = io('http://sensor-xuanrasia.rhcloud.com:8080'); var num = 1;
 socket.on('message', function(message) {
     var msg = JSON.parse(message);
     console.log(msg);

@@ -1,6 +1,12 @@
 $(document).ready(function() {
     var listAllSensor = null;
+    // var port = 8080;
+    var ip   = 'sensor-xuanrasia.rhcloud.com';
+       // var ip   = 'localhost';
 
+    // console.log(port);
+    // console.log(ip);
+    var shost = 'http://'+ip;
     function resultsTable(data) {
         var color_while = '<tr style="background-color:#fff;">';
         var color_blue = '<tr style="background-color:#00ffff;">',
@@ -19,7 +25,7 @@ $(document).ready(function() {
 
     /*get all sensor*/
     $.ajax({
-        url: 'http://localhost:3000/sensors',
+        url: shost+'/sensors',
         data: {
             format: 'json'
         },
@@ -37,7 +43,7 @@ $(document).ready(function() {
 
     /*get element of user*/
     $.ajax({
-        url: 'http://localhost:3000/group/user',
+        url: shost+'/group/user',
         data: {
             format: 'json'
         },
@@ -53,7 +59,7 @@ $(document).ready(function() {
 
     /*get element of group*/
     $.ajax({
-        url: 'http://localhost:3000/group/group',
+        url: shost+'/group/group',
         data: {
             format: 'json'
         },
@@ -69,7 +75,7 @@ $(document).ready(function() {
 
     /*get element of tenant*/
     $.ajax({
-        url: 'http://localhost:3000/group/tenant',
+        url: shost+'/group/tenant',
         data: {
             format: 'json'
         },
@@ -85,7 +91,7 @@ $(document).ready(function() {
 
     function filterGroup(group, optionValue) {
         $.ajax({
-            url: 'http://localhost:3000/group/' + group + '/' + optionValue,
+            url: shost+'/group/' + group + '/' + optionValue,
             data: {
                 format: 'json'
             },
@@ -128,7 +134,7 @@ $(document).ready(function() {
     //Post a message to Queues
     $("#postMessage").click(function() {
         $.ajax({
-            url: 'http://localhost:3000/message',
+            url: shost+'/message',
             type: 'post',
             data: {
                 format: 'json'
